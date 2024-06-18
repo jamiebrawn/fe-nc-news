@@ -2,62 +2,69 @@
   padding: 16px;
   margin: 8px;
   background-color: #fff;
+  cursor: pointer;
 }
 
 .article-card:hover {
   background-color: #ededed;
 }
 
-.article-card:hover .article-title {
+.article-card:hover .article-card-title {
   text-decoration: underline;
 }
 
-.article-img {
+.article-card-img {
   width: 100%;
   height: auto;
 }
 
-.article-title {
+.article-card-title {
   font-size: 1.5rem;
   margin: 8px 0 4px;
 }
 
-.article-ref,
-.article-topic,
-.article-metrics {
+.article-card-ref,
+.article-card-topic,
+.article-card-metrics {
   display: flex;
   align-items: center;
   color: #555;
-  margin: 4px 0;
-}
-
-.article-ref {
-  justify-content: space-between;
-}
-
-.article-author {
-  font-size: 1.125rem;
   margin: 0;
 }
 
-.article-date,
-.article-topic,
-.article-metrics {
+.article-card-ref {
+  justify-content: space-between;
+}
+
+.article-card-author,
+.article-card-topic {
+  cursor: default;
+}
+
+.article-card-author {
+  font-size: 1.125rem;
+}
+
+.article-card-date,
+.article-card-metrics {
   font-size: 0.875rem;
 }
 
-.article-metrics p {
+.article-card-metrics p {
   justify-content: start;
   margin-right: 16px;
 }
 
-.article-topic,
-.article-date,
-.article-votes,
-.article-comments {
-  margin: 0;
+.article-card-ref p,
+.article-card-topic,
+.article-card-metrics p {
+  margin: 4px 0
 }
 
-.article-topic {
+.article-card-metrics p {
+  margin-right: 16px
+}
+
+.article-card-topic {
   font-weight: bold;
 }

@@ -22,20 +22,21 @@ const ArticleList = () => {
       });
   }, []);
 
-  if(isLoading) {
-    return <h2>Loading...</h2>
-  }
-
-  if(err) {
-    return <h2>Sorry, something went wrong</h2>
-  }
-
   return (
-    <section className="article-list">
-      {articles.map((article) => {
-        return <ArticleCard key={article.article_id} article={article} />;
-      })}
-    </section>
+    <>
+      <h1>Articles</h1>
+      {isLoading ? <h2>Loading...</h2> : null}
+      {err ? (
+        <>
+          <h2>Sorry, something went wrong</h2>
+        </>
+      ) : null}
+      <section className="article-list">
+        {articles.map((article) => {
+          return <ArticleCard key={article.article_id} article={article} />;
+        })}
+      </section>
+    </>
   );
 };
 
