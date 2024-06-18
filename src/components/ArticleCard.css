@@ -20,16 +20,24 @@
 
 .article-card-title {
   font-size: 1.5rem;
-  margin: 8px 0 4px;
+  margin: 8px 0 0;
 }
 
 .article-card-ref,
 .article-card-topic,
 .article-card-metrics {
-  display: flex;
-  align-items: center;
   color: #555;
-  margin: 0;
+}
+
+.article-card-ref,
+.article-card-metrics {
+  display: flex;
+  align-items: flex-end;
+}
+
+.article-card-ref p,
+.article-card-metrics p {
+  margin: 4px 0 0;
 }
 
 .article-card-ref {
@@ -50,21 +58,15 @@
   font-size: 0.875rem;
 }
 
+.article-card-metrics {
+  justify-content: flex-start;
+}
+
 .article-card-metrics p {
-  justify-content: start;
   margin-right: 16px;
-}
-
-.article-card-ref p,
-.article-card-topic,
-.article-card-metrics p {
-  margin: 4px 0
-}
-
-.article-card-metrics p {
-  margin-right: 16px
 }
 
 .article-card-topic {
   font-weight: bold;
+  margin: 4px 0 6px;
 }
