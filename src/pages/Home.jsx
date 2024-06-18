@@ -1,10 +1,10 @@
 import ArticleList from "../components/ArticleList";
 
-const Home = () => {
+const Home = ({setArticle}) => {
+
   return (
     <div>
-      <h1>Articles</h1>
-      <ArticleList />
+      <ArticleList setArticle={setArticle}/>
     </div>
   );
 };

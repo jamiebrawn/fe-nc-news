@@ -1,0 +1,47 @@
+.article-detail {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.article-details-topic,
+.article-details-author,
+.article-details-date,
+.article-details-votes,
+.article-details-comment-count {
+  color: #555;
+}
+
+.article-details-topic {
+  font-size: 1.375rem;
+  margin: 16px 0 0;
+}
+
+.article-details-title {
+  font-size: 2rem;
+  margin: 4px 0 16px;
+}
+
+.article-details-img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  margin: 0;
+}
+
+.article-details-author,
+.article-details-date,
+.article-details-votes,
+.article-details-comment-count {
+  margin: 8px 0;
+}
+
+.article-details-author  {
+  font-size: 1.125rem
+}
+
+.article-details-body {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin: 16px 0;
+}
