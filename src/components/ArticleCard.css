@@ -1,0 +1,63 @@
+.article-card {
+  padding: 16px;
+  margin: 8px;
+  background-color: #fff;
+}
+
+.article-card:hover {
+  background-color: #ededed;
+}
+
+.article-card:hover .article-title {
+  text-decoration: underline;
+}
+
+.article-img {
+  width: 100%;
+  height: auto;
+}
+
+.article-title {
+  font-size: 1.5rem;
+  margin: 8px 0 4px;
+}
+
+.article-ref,
+.article-topic,
+.article-metrics {
+  display: flex;
+  align-items: center;
+  color: #555;
+  margin: 4px 0;
+}
+
+.article-ref {
+  justify-content: space-between;
+}
+
+.article-author {
+  font-size: 1.125rem;
+  margin: 0;
+}
+
+.article-date,
+.article-topic,
+.article-metrics {
+  font-size: 0.875rem;
+}
+
+.article-metrics p {
+  justify-content: start;
+  margin-right: 16px;
+}
+
+.article-topic,
+.article-date,
+.article-votes,
+.article-comments {
+  margin: 0;
+}
+
+.article-topic {
+  font-weight: bold;
+}

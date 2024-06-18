@@ -1,0 +1,22 @@
+.article-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.article-list .article-card {
+  flex: 1 1 calc(33.333% - 32px);
+  margin: 16px;
+}
+
+@media (max-width: 768px) {
+  .article-list .article-card {
+    flex: 1 1 calc(50% - 32px);
+  }
+}
+
+@media (max-width: 480px) {
+  .article-list .article-card {
+    flex: 1 1 calc(100% - 32px);
+  }
+}
