@@ -1,13 +1,15 @@
+import { useState } from "react";
 import ArticleDetails from "../components/ArticleDetails";
 import CommentsContainer from "../components/CommentsContainer";
 
 const ArticlePage = () => {
+  const [commentCount, setCommentCount] = useState(0);
 
   return (
-    <div>
-      <ArticleDetails />
-      <CommentsContainer />
-    </div>
+    <>
+      <ArticleDetails commentCount={commentCount} />
+      <CommentsContainer setCommentCount={setCommentCount} />
+    </>
   );
 };
 
