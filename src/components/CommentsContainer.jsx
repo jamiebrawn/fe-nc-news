@@ -1,5 +1,5 @@
 import CommentsList from "./CommentsList";
-import './CommentsContainer.css'
+import '../styles/CommentsContainer.css'
 
 const CommentsContainer = () => {
   return (

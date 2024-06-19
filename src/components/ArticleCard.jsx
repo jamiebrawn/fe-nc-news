@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import "./ArticleCard.css";
+import "../styles/ArticleCard.css"
 
 const ArticleCard = ({ article }) => {
 

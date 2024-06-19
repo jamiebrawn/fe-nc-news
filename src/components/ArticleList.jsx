@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getArticles } from "../utils/api";
 import ArticleCard from "./ArticleCard";
-import "./ArticleList.css";
+import "../styles/ArticleList.css";
 
 const ArticleList = () => {
   const [articles, setArticles] = useState([]);
@@ -17,7 +17,7 @@ const ArticleList = () => {
       })
       .catch((err) => {
         console.error(err);
-        setErr(err);
+        setErr("Failed to load articles. Please try again later.");
         setIsLoading(false);
       });
   }, []);
@@ -28,7 +28,7 @@ const ArticleList = () => {
       {isLoading ? <h2>Loading...</h2> : null}
       {err ? (
         <>
-          <h2>Sorry, something went wrong</h2>
+          <h2>{err}</h2>
         </>
       ) : null}
       <section className="article-list">

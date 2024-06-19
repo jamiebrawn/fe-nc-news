@@ -1,4 +1,4 @@
-import "./CommentCard.css";
+import "../styles/CommentCard.css";
 
 const CommentCard = ({ comment }) => {
   return (
