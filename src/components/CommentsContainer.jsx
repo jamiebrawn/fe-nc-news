@@ -5,7 +5,7 @@ import CommentsAdder from "./CommentsAdder";
 import CommentsList from "./CommentsList";
 import '../styles/CommentsContainer.css'
 
-const CommentsContainer = () => {
+const CommentsContainer = ({ setCommentCount }) => {
   const { article_id } = useParams();
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -28,7 +28,7 @@ const CommentsContainer = () => {
   return (
     <div className="comments-container">
     <h2>Comments</h2>
-      <CommentsAdder setComments={setComments} />
+      <CommentsAdder setComments={setComments} setCommentCount={setCommentCount}/>
       <CommentsList isLoading={isLoading} err={err} comments={comments}/>
     </div>
   );

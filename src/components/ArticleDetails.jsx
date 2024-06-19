@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { getArticleById, patchArticleVotes } from "../utils/api";
 import "../styles/ArticleDetails.css";
 
-const ArticleDetails = () => {
+const ArticleDetails = ({ commentCount }) => {
   const { article_id } = useParams();
   const { userVotes, updateUserVotes } = useContext(UserContext);
   const [article, setArticle] = useState({});
@@ -12,7 +12,6 @@ const ArticleDetails = () => {
   const [err, setErr] = useState(null);
   const [voteChange, setVoteChange] = useState(0);
   const [voteErr, setVoteErr] = useState(null);
-  const userVoted = userVotes[article_id] || 0;
 
   useEffect(() => {
     setIsLoading(true);
@@ -31,7 +30,7 @@ const ArticleDetails = () => {
   }, [article_id]);
 
   const handleVote = (increment) => {
-    if (userVoted === increment) {
+    if (userVotes[article_id] === increment) {
       setVoteErr("You have already voted.");
       return;
     }
@@ -76,10 +75,10 @@ const ArticleDetails = () => {
       </p>
       <div className="article-details-body">{article.body}</div>
       <div className="article-details-votes">
-        <button onClick={() => handleVote(1)} disabled={userVoted === 1}>
+        <button onClick={() => handleVote(1)} disabled={userVotes[article_id] === 1}>
           Upvote
         </button>
-        <button onClick={() => handleVote(-1)} disabled={userVoted === -1}>
+        <button onClick={() => handleVote(-1)} disabled={userVotes[article_id] === -1}>
           Downvote
         </button>
         <p>Votes: {article.votes + voteChange}</p>
@@ -88,7 +87,7 @@ const ArticleDetails = () => {
         ) : null}
       </div>
       <p className="article-details-comment-count">
-        {article.comment_count} Comments
+        {article.comment_count + commentCount} Comments
       </p>
     </div>
   );
