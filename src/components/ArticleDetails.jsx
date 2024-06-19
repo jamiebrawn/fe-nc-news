@@ -48,7 +48,7 @@ const ArticleDetails = () => {
         setVoteChange((currentCount) => {
           return currentCount - increment;
         });
-        setVoteErr("Failed to load articles. Please try again later.");
+        setVoteErr("Failed to update votes. Please try again later.");
         console.error(err);
       });
   };
