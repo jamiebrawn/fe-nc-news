@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { getTopics } from "../utils/api";
+import "../styles/TopicsNav.css";
 
-const TopicsNav = () => {
+const TopicsNav = ({ articleTopic }) => {
   const [topics, setTopics] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [err, setErr] = useState(null);
@@ -31,11 +32,24 @@ const TopicsNav = () => {
 
   return (
     <nav className="topics-nav">
-      <Link to="/">Home</Link>
+      <NavLink
+        to="/"
+        className={({ isActive }) =>
+          `nav-link ${isActive ? "active" : ""}`
+        }
+      >
+        Home
+      </NavLink>
       {topics.map((topic) => (
-        <Link key={topic.slug} to={`/articles/${topic.slug}`}>
-          {topic.slug}
-        </Link>
+        <NavLink
+          key={topic.slug}
+          to={`/topics/${topic.slug}`}
+          className={({ isActive }) =>
+            `nav-link ${isActive ? "active" : ""} ${topic.slug === articleTopic ? "topic-active" : ""}`
+          }
+        >
+          {topic.slug.charAt(0).toUpperCase() + topic.slug.slice(1)}
+        </NavLink>
       ))}
     </nav>
   );

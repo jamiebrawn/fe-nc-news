@@ -26,7 +26,6 @@ const ArticleList = () => {
 
   return (
     <>
-      <h1>{topic ? `${topic}` : "Home"}</h1>
       {isLoading ? <h2>Loading...</h2> : null}
       {err ? (
         <>

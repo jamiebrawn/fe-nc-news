@@ -4,18 +4,20 @@ import { UserContext } from "../contexts/User";
 import TopicsNav from "./TopicsNav";
 import "../styles/Header.css";
 
-const Header = () => {
+const Header = ({articleTopic}) => {
   const { user } = useContext(UserContext);
 
   return (
     <header className="header">
-      <div className="navbar-app-name">
-        <Link to="/">NC News</Link>
+      <div className="header-content">
+        <div className="header-app-name">
+          <Link to="/">NC News</Link>
+        </div>
+        <div className="header-user">
+          Hello, <span className="header-user-username">{user}</span>
+        </div>
       </div>
-      <div className="navbar-user">
-        Hello, <span className="navbar-user-username">{user}</span>
-      </div>
-      <TopicsNav />
+      <TopicsNav articleTopic={articleTopic}/>
     </header>
   );
 };
