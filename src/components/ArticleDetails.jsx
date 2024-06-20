@@ -1,11 +1,12 @@
 import { useEffect, useState, useContext } from "react";
 import { UserContext } from "../contexts/User";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { getArticleById, patchArticleVotes } from "../utils/api";
 import "../styles/ArticleDetails.css";
 
-const ArticleDetails = ({ commentCount }) => {
+const ArticleDetails = ({ commentCount, setArticleTopic }) => {
   const { article_id } = useParams();
+  const navigate = useNavigate();
   const { userVotes, updateUserVotes } = useContext(UserContext);
   const [article, setArticle] = useState({});
   const [isLoading, setIsLoading] = useState(false);
@@ -17,6 +18,7 @@ const ArticleDetails = ({ commentCount }) => {
     setIsLoading(true);
     getArticleById(article_id)
       .then((response) => {
+        setArticleTopic(response.topic);
         response.topic =
           response.topic.charAt(0).toUpperCase() + response.topic.slice(1);
         setArticle((currentState) => ({ ...currentState, ...response }));
@@ -27,7 +29,7 @@ const ArticleDetails = ({ commentCount }) => {
         setErr("Failed to load article.");
         setIsLoading(false);
       });
-  }, [article_id]);
+  }, [article_id, setArticleTopic]);
 
   const handleVote = (increment) => {
     if (userVotes[article_id] === increment) {
@@ -52,6 +54,10 @@ const ArticleDetails = ({ commentCount }) => {
       });
   };
 
+  const handleTopicClick = () => {
+    navigate(`/topics/${article.topic.toLowerCase()}`);
+  };
+
   if (isLoading) {
     return <h2>Loading...</h2>;
   }
@@ -62,7 +68,9 @@ const ArticleDetails = ({ commentCount }) => {
 
   return (
     <div className="article-details">
-      <h2 className="article-details-topic">{article.topic}</h2>
+      <h2 className="article-details-topic" onClick={handleTopicClick}>
+        {article.topic}
+      </h2>
       <h1 className="article-details-title">{article.title}</h1>
       <img
         className="article-details-img"
@@ -75,10 +83,16 @@ const ArticleDetails = ({ commentCount }) => {
       </p>
       <div className="article-details-body">{article.body}</div>
       <div className="article-details-votes">
-        <button onClick={() => handleVote(1)} disabled={userVotes[article_id] === 1}>
+        <button
+          onClick={() => handleVote(1)}
+          disabled={userVotes[article_id] === 1}
+        >
           Upvote
         </button>
-        <button onClick={() => handleVote(-1)} disabled={userVotes[article_id] === -1}>
+        <button
+          onClick={() => handleVote(-1)}
+          disabled={userVotes[article_id] === -1}
+        >
           Downvote
         </button>
         <p>Votes: {article.votes + voteChange}</p>

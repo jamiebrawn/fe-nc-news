@@ -18,7 +18,8 @@
   height: auto;
 }
 
-.article-card-title {
+.article-card-title,
+.topic-hovered {
   font-size: 1.5rem;
   margin: 8px 0 0;
 }
@@ -44,12 +45,8 @@
   justify-content: space-between;
 }
 
-.article-card-author,
-.article-card-topic {
-  cursor: default;
-}
-
 .article-card-author {
+  cursor: default;
   font-size: 1.125rem;
 }
 
@@ -69,4 +66,8 @@
 .article-card-topic {
   font-weight: bold;
   margin: 4px 0 6px;
+}
+
+.article-card-topic:hover {
+  text-decoration: underline;
 }

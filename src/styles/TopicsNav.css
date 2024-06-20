@@ -1,0 +1,25 @@
+.topics-nav {
+  display: flex;
+  padding: 10px 0;
+  font-size: 1.25rem
+}
+
+.topics-nav a {
+  text-decoration: none;
+  color: black;
+  padding: 5px 10px;
+}
+
+.topics-nav a.active,
+.topics-nav a.topic-active{
+  background-color: #ccc;
+}
+
+.topics-nav a:hover {
+  text-decoration: underline;
+}
+
+.topics-nav a.active {
+  text-decoration: none;
+  cursor: default;
+}

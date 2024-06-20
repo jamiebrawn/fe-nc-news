@@ -1,6 +1,11 @@
+import { useEffect } from "react";
 import ArticleList from "../components/ArticleList";
 
-const Home = () => {
+const Home = ({setArticleTopic}) => {
+
+  useEffect(() => {
+    setArticleTopic(null);
+  });
 
   return (
     <div>
@@ -10,4 +15,3 @@ const Home = () => {
 };
 
 export default Home;
-
