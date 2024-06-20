@@ -29,7 +29,7 @@ const CommentsContainer = ({ setCommentCount }) => {
     <div className="comments-container">
     <h2>Comments</h2>
       <CommentsAdder setComments={setComments} setCommentCount={setCommentCount}/>
-      <CommentsList isLoading={isLoading} err={err} comments={comments}/>
+      <CommentsList isLoading={isLoading} err={err} comments={comments} setComments={setComments} setCommentCount={setCommentCount}/>
     </div>
   );
 };
