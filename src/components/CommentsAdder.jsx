@@ -43,7 +43,6 @@ const CommentAdder = ({ setComments, setCommentCount }) => {
         setComments((currentComments) => {
           return currentComments.filter((comment) => comment !== newComment);
         });
-        // setCommentCount((currentCount) => currentCount - 1);
         console.error(err);
         setIsLoading(false);
       });

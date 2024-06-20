@@ -10,7 +10,7 @@ function App() {
       <Header />
       <main className="content">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/:topic" element={<Home />} />
           <Route path="/articles/:article_id" element={<ArticlePage />} />
         </Routes>
       </main>
