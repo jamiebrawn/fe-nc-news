@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { UserContext } from "../contexts/User";
 import { postCommentByArticleId } from "../utils/api";
-import '../styles/CommentAdder.css'
+import "../styles/CommentAdder.css";
 
 const CommentAdder = ({ setComments, setCommentCount }) => {
   const { article_id } = useParams();
@@ -35,14 +35,15 @@ const CommentAdder = ({ setComments, setCommentCount }) => {
       .then(() => {
         setSuccessMessage("Comment posted.");
         setBody("");
-        setIsLoading(false);
         setCommentCount((currentCount) => currentCount + 1);
+        setIsLoading(false);
       })
       .catch((err) => {
         setErr("Failed to add comment. Please try again later.");
-        setComments((currentComments) =>
-          currentComments.filter((comment) => comment !== newComment)
-        );
+        setComments((currentComments) => {
+          return currentComments.filter((comment) => comment !== newComment);
+        });
+        // setCommentCount((currentCount) => currentCount - 1);
         console.error(err);
         setIsLoading(false);
       });
@@ -78,7 +79,9 @@ const CommentAdder = ({ setComments, setCommentCount }) => {
           </button>
         </div>
       </form>
-      {successMessage ? <p className="success-message">{successMessage}</p> : null}
+      {successMessage ? (
+        <p className="success-message">{successMessage}</p>
+      ) : null}
     </div>
   );
 };

@@ -19,7 +19,8 @@
   font-size: 1.125rem;
 }
 
-.comment-card-date {
+.comment-card-date,
+.comment-card-votes {
   font-size: 0.875rem;
   color: #555;
 }
@@ -29,7 +30,38 @@
   line-height: 1.5;
 }
 
+.comment-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  
+}
+
 .comment-card-votes {
-  font-size: 0.875rem;
-  color: #333;
+  margin-right: 36px;
+}
+
+.comment-card button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.comment-card button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.comment-card button:hover {
+  background-color: #c82333;
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 0.9rem;
+  margin-top: 5px;
 }

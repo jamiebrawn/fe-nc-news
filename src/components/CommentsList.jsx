@@ -1,6 +1,6 @@
 import CommentCard from "./CommentCard";
 
-const CommentsList = ({comments, isLoading, err}) => {
+const CommentsList = ({comments, isLoading, err, setComments, setCommentCount}) => {
   
 
   if (isLoading) {
@@ -14,7 +14,7 @@ const CommentsList = ({comments, isLoading, err}) => {
   return (
     <>
       {comments.map((comment) => (
-        <CommentCard key={comment.comment_id} comment={comment} />
+        <CommentCard key={comment.comment_id} comment={comment} setComments={setComments} setCommentCount={setCommentCount}/>
       ))}
     </>
   );
