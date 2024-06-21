@@ -16,6 +16,7 @@ const CommentsContainer = ({ setCommentCount }) => {
     getCommentsByArticleId(article_id)
       .then((response) => {
         setComments(response);
+        setErr(null);
         setIsLoading(false);
       })
       .catch((err) => {

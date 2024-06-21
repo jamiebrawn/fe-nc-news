@@ -15,6 +15,7 @@ const ArticleList = ({ sortBy, order }) => {
     getArticles(topic)
       .then((response) => {
         setArticles(response);
+        setErr(null);
         setIsLoading(false);
       })
       .catch((err) => {

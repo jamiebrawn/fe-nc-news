@@ -13,6 +13,7 @@ const TopicsNav = ({ articleTopic }) => {
     getTopics()
       .then((response) => {
         setTopics(response);
+        setErr(null);
         setIsLoading(false);
       })
       .catch((err) => {
