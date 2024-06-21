@@ -34,10 +34,9 @@ const TopicsNav = ({ articleTopic }) => {
   return (
     <nav className="topics-nav">
       <NavLink
-        to="/articles"
-        className={({ isActive }) =>
-          `nav-link ${isActive ? "active" : ""}`
-        }
+        
+        end to="/articles"
+        className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
       >
         Home
       </NavLink>
@@ -46,7 +45,9 @@ const TopicsNav = ({ articleTopic }) => {
           key={topic.slug}
           to={`/topics/${topic.slug}`}
           className={({ isActive }) =>
-            `nav-link ${isActive ? "active" : ""} ${topic.slug === articleTopic ? "topic-active" : ""}`
+            `nav-link ${isActive ? "active" : ""} ${
+              topic.slug === articleTopic ? "topic-active" : ""
+            }`
           }
         >
           {topic.slug.charAt(0).toUpperCase() + topic.slug.slice(1)}
