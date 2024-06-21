@@ -22,6 +22,7 @@ const ArticleDetails = ({ commentCount, setArticleTopic }) => {
         response.topic =
           response.topic.charAt(0).toUpperCase() + response.topic.slice(1);
         setArticle((currentState) => ({ ...currentState, ...response }));
+        setErr(null);
         setIsLoading(false);
       })
       .catch((err) => {
