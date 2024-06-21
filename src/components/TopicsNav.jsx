@@ -33,7 +33,7 @@ const TopicsNav = ({ articleTopic }) => {
   return (
     <nav className="topics-nav">
       <NavLink
-        to="/"
+        to="/articles"
         className={({ isActive }) =>
           `nav-link ${isActive ? "active" : ""}`
         }

@@ -71,3 +71,8 @@
 .article-card-topic:hover {
   text-decoration: underline;
 }
+
+.article-card-topic.no-underline:hover {
+  text-decoration: none;
+  cursor: default;
+}

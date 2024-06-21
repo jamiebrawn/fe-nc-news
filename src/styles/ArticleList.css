@@ -20,3 +20,7 @@
     flex: 1 1 calc(100% - 32px);
   }
 }
+
+.article-list-title {
+  margin: 16px auto 0;
+}
