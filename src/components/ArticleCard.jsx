@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "../styles/ArticleCard.css";
 
 const ArticleCard = ({ article }) => {
   const navigate = useNavigate();
+  const {topic} = useParams();
   const [isTopicHovered, setIsTopicHovered] = useState(false);
 
   const handleTopicMouseEnter = () => {
@@ -50,7 +51,7 @@ const ArticleCard = ({ article }) => {
         </p>
       </div>
       <p
-        className="article-card-topic"
+        className={`article-card-topic ${topic === article.topic ? "no-underline" : ""}`}
         onClick={handleTopicClick}
         onMouseEnter={handleTopicMouseEnter}
         onMouseLeave={handleTopicMouseLeave}

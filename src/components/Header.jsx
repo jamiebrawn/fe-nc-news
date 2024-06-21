@@ -11,7 +11,7 @@ const Header = ({articleTopic}) => {
     <header className="header">
       <div className="header-content">
         <div className="header-app-name">
-          <Link to="/">NC News</Link>
+          <Link to="/articles">NC News</Link>
         </div>
         <div className="header-user">
           Hello, <span className="header-user-username">{user}</span>

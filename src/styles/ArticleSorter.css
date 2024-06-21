@@ -1,0 +1,13 @@
+.sort-controls {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.sort-controls label {
+  margin-right: 16px;
+}
+
+.sort-controls select {
+  margin-left: 8px;
+}

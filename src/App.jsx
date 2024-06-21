@@ -14,7 +14,7 @@ function App() {
       <Header articleTopic={articleTopic}/>
       <main className="content">
         <Routes>
-          <Route path="/" element={<Home setArticleTopic={setArticleTopic}/>} />
+          <Route path="/articles" element={<Home setArticleTopic={setArticleTopic}/>} />
           <Route path="/topics/:topic" element={<Home setArticleTopic={setArticleTopic}/>} />
           <Route path="/articles/:article_id" element={<ArticlePage setArticleTopic={setArticleTopic}/>} />
         </Routes>
