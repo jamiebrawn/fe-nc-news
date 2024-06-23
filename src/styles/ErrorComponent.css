@@ -1,0 +1,19 @@
+.error-component {
+  border: 1px solid red;
+  border-radius: 5px;
+  padding: 16px;
+  margin: 16px 0;
+  background-color: #ffe6e6;
+  color: #a94442;
+  text-align: center;
+}
+
+.error-component h2 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.error-component p {
+  margin: 0.5em 0 0;
+  font-size: 1.2em;
+}

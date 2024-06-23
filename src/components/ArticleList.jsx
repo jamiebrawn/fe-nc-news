@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getArticles } from "../utils/api";
 import ArticleCard from "./ArticleCard";
+import ErrorComponent from "./ErrorComponent";
 import "../styles/ArticleList.css";
 
 const ArticleList = ({ sortBy, order }) => {
@@ -49,7 +50,7 @@ const ArticleList = ({ sortBy, order }) => {
       {isLoading ? <h2>Loading...</h2> : null}
       {err ? (
         <>
-          <h2>{err}</h2>
+        return <ErrorComponent message={err} />;
         </>
       ) : null}
       <section className="article-list">
