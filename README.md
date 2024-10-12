@@ -46,13 +46,37 @@ node --version
    npm install
    ```
 
-4. **Start the development server**:
+4. **Set up environment files**:
+
+   Create two files in the root directory:
+
+   `.env.hosted`:
+
+   ```ini
+   VITE_API_URL=https://be-nc-news-ws53.onrender.com/api
+   ```
+
+   `.env.local_repo`:
+
+   ```ini
+   VITE_API_URL=http://localhost:9090/api
+   ```
+
+5. **Start the development server**:
+
+   To run using the hosted API:
 
    ```bash
    npm run dev
    ```
 
-5. **Navigate to your browser**:
+   To run using a local API, follow local set-up steps for [back-end app](https://github.com/jamiebrawn/be-nc-news). Then:
+
+   ```bash
+   npm run dev:local
+   ```
+
+6. **Navigate to your browser**:
    Open your browser and go to [http://localhost:5173/](http://localhost:5173/) to view the application.
 
 ## About This Project
