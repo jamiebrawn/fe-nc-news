@@ -1,10 +1,10 @@
-# Article Hub
+# NC News
 
 [Link to Deployed Version](https://ncnewsjb.netlify.app)
 
 ## General Info
 
-Article Hub is a web application that allows users to read, comment, and vote on various articles across different topics. Users can browse articles, view detailed information about each article, and participate in discussions through comments. The app also provides sorting functionality to view the most recent, most discussed, or most liked articles.
+NC News is a web application that allows users to read, comment, and vote on various articles across different topics. Users can browse articles, view detailed information about each article, and participate in discussions through comments. The app also provides sorting functionality to view the most recent, most discussed, or most liked articles.
 
 ### Key Features
 

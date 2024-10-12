@@ -1,8 +1,6 @@
 import CommentCard from "./CommentCard";
 
-const CommentsList = ({comments, isLoading, err, setComments, setCommentCount}) => {
-  
-
+const CommentsList = ({ comments, isLoading, err, onDeleteComment }) => {
   if (isLoading) {
     return <h2>Loading...</h2>;
   }
@@ -14,7 +12,11 @@ const CommentsList = ({comments, isLoading, err, setComments, setCommentCount}) 
   return (
     <>
       {comments.map((comment) => (
-        <CommentCard key={comment.comment_id} comment={comment} setComments={setComments} setCommentCount={setCommentCount}/>
+        <CommentCard 
+          key={comment.comment_id} 
+          comment={comment} 
+          onDeleteComment={onDeleteComment}
+        />
       ))}
     </>
   );

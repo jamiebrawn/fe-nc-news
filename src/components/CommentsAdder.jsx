@@ -1,10 +1,9 @@
 import { useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { UserContext } from "../contexts/User";
-import { postCommentByArticleId } from "../utils/api";
 import "../styles/CommentAdder.css";
 
-const CommentAdder = ({ setComments, setCommentCount }) => {
+const CommentAdder = ({ onAddComment }) => {
   const { article_id } = useParams();
   const { user } = useContext(UserContext);
   const [body, setBody] = useState("");
@@ -29,20 +28,15 @@ const CommentAdder = ({ setComments, setCommentCount }) => {
       votes: 0,
       created_at: new Date().toISOString(),
     };
-    setComments((currentComments) => [newComment, ...currentComments]);
 
-    postCommentByArticleId(article_id, user, body)
+    onAddComment(newComment, user, body)
       .then(() => {
         setSuccessMessage("Comment posted.");
         setBody("");
-        setCommentCount((currentCount) => currentCount + 1);
         setIsLoading(false);
       })
       .catch((err) => {
         setErr("Failed to add comment. Please try again later.");
-        setComments((currentComments) => {
-          return currentComments.filter((comment) => comment !== newComment);
-        });
         console.error(err);
         setIsLoading(false);
       });

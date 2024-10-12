@@ -1,9 +1,8 @@
 import { useContext, useState } from "react";
 import { UserContext } from "../contexts/User";
-import { deleteCommentByCommentId } from "../utils/api";
 import "../styles/CommentCard.css";
 
-const CommentCard = ({ comment, setComments, setCommentCount }) => {
+const CommentCard = ({ comment, onDeleteComment }) => {
   const { user } = useContext(UserContext);
   const [isDeleting, setIsDeleting] = useState(false);
   const [deleteErr, setDeleteErr] = useState(null);
@@ -11,15 +10,9 @@ const CommentCard = ({ comment, setComments, setCommentCount }) => {
   const handleDelete = () => {
     setIsDeleting(true);
     setDeleteErr(null);
-
-    deleteCommentByCommentId(comment.comment_id)
+    onDeleteComment(comment.comment_id)
       .then(() => {
-        setComments((currentComments) =>
-          currentComments.filter(
-            (currentComment) => currentComment.comment_id !== comment.comment_id
-          )
-        );
-        setCommentCount((currentCount) => currentCount - 1);
+        setIsDeleting(false);
       })
       .catch((err) => {
         setDeleteErr("Failed to delete comment. Please try again later.");
